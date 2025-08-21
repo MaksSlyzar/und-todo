@@ -5,6 +5,9 @@
   Title input
   Description input
   Icon Gif input
+Normalize text
+Make notes bigger
+
 6. Drop down note
 7. Select notes
 8. Group selected notes

@@ -1,4 +1,4 @@
-import { Container, Graphics } from "pixi.js";
+import { Graphics } from "pixi.js";
 import type ObjectManager from "../ObjectManager";
 import { Component } from "./Component";
 import NoteHeader from "./NoteHeader";

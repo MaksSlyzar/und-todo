@@ -1,4 +1,4 @@
-import { Application, Text } from "pixi.js";
+import { Application } from "pixi.js";
 import CanvasEvents from "../CanvasEvents";
 import AddButton from "./AddButton";
 import ObjectManager from "../ObjectManager";

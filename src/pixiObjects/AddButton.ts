@@ -3,7 +3,6 @@ import { Component } from "./Component";
 import { Button } from "@pixi/ui";
 import CanvasEvents from "../CanvasEvents";
 import type ObjectManager from "../ObjectManager";
-import Note from "./Note";
 import type NotesView from "./NotesView";
 
 class AddButton extends Component {
