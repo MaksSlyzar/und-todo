@@ -1,0 +1,13 @@
+1. Init project with Pixi js and Typescript
+2. Handle events from user
+3. Create an canvas and setup camera
+4. Add button like plus and right click menu
+5. Create Note that have 
+  Title
+  Description
+  Icon Gif
+6. Drop down note
+7. Select notes
+8. Group selected notes
+9. Add note index
+10. Create dashboard for notes and name it.
