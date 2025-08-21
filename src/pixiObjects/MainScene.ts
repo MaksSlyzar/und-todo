@@ -1,15 +1,16 @@
 import { Application, Text } from "pixi.js";
 import CanvasEvents from "../CanvasEvents";
 import AddButton from "./AddButton";
-import type ObjectManager from "../ObjectManager";
+import ObjectManager from "../ObjectManager";
 import { Component } from "./Component";
+import NotesView from "./NotesView";
 
 class MainScene extends Component {
   private cameraSpeed: number = 2.5;
   private addButton: AddButton;
 
   constructor(app: Application, objectManager: ObjectManager) {
-    super();
+    super(objectManager);
     app.stage.addChild(this);
 
     const text = new Text({
@@ -19,8 +20,11 @@ class MainScene extends Component {
     });
     this.addChild(text);
 
+    const notesView = new NotesView(objectManager);
+    this.addChild(notesView);
+    objectManager.add("notes-view", notesView);
 
-    this.addButton = new AddButton();
+    this.addButton = new AddButton(objectManager);
     app.stage.addChild(this.addButton);
     objectManager.add("add-button", this.addButton);
   }

@@ -1,7 +1,6 @@
 1. Init project with Pixi js and Typescript  DONE
-2.
-3. Create an canvas and setup camera
-4. Add button like plus and right click menu
+3. Create an canvas and setup camera Done
+4. Add button like plus and right click menu Done
 5. Create Note that have 
   Title
   Description

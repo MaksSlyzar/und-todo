@@ -2,12 +2,14 @@ import { Graphics, Text } from "pixi.js";
 import { Component } from "./Component";
 import { Button } from "@pixi/ui";
 import CanvasEvents from "../CanvasEvents";
+import type ObjectManager from "../ObjectManager";
+import Note from "./Note";
+import type NotesView from "./NotesView";
 
 class AddButton extends Component {
   button: Button;
-
-  constructor() {
-    super();
+  constructor(objectsManager: ObjectManager) {
+    super(objectsManager);
     const bg = new Graphics()
       .roundRect(0, 0, 100, 100, 20)
       .fill({ color: 0xFF8800 });
@@ -25,6 +27,15 @@ class AddButton extends Component {
 
     this.button = new Button(bg);
     this.addChild(this.button.view);
+
+    this.button.onPress.connect(() => this.onClick());
+  }
+
+  onClick = () => {
+    const notesView = this.objectManager.get<NotesView>("notes-view");
+    if (notesView) {
+      notesView.createNewNote();
+    }
   }
 
   update(time: number) {
