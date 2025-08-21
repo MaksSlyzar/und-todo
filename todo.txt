@@ -7,7 +7,8 @@
   Icon Gif input
 Normalize text
 Make notes bigger
-
+Make resize note
+Resize all canvas
 6. Drop down note
 7. Select notes
 8. Group selected notes
