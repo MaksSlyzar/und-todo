@@ -1,10 +1,14 @@
-import { Application, Container, Text, Ticker } from "pixi.js";
+import { Application, Text } from "pixi.js";
 import CanvasEvents from "../CanvasEvents";
+import AddButton from "./AddButton";
+import type ObjectManager from "../ObjectManager";
+import { Component } from "./Component";
 
-class MainScene extends Container {
-  cameraSpeed: number = 2.5;
+class MainScene extends Component {
+  private cameraSpeed: number = 2.5;
+  private addButton: AddButton;
 
-  constructor(app: Application) {
+  constructor(app: Application, objectManager: ObjectManager) {
     super();
     app.stage.addChild(this);
 
@@ -14,12 +18,17 @@ class MainScene extends Container {
       y: 200,
     });
     this.addChild(text);
+
+
+    this.addButton = new AddButton();
+    app.stage.addChild(this.addButton);
+    objectManager.add("add-button", this.addButton);
   }
 
-  public update(time: Ticker) {
+  public update(time: number) {
     const moveHor = CanvasEvents.isKeyDown("a") ? -1 : CanvasEvents.isKeyDown("d") ? +1 : 0;
     const moveVer = CanvasEvents.isKeyDown("w") ? -1 : CanvasEvents.isKeyDown("s") ? +1 : 0;
-    this.moveCamera(moveHor, moveVer, time.deltaTime);
+    this.moveCamera(moveHor, moveVer, time);
   }
 
   private moveCamera(dx: number, dy: number, deltaTime: number = 1) {

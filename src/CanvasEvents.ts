@@ -17,6 +17,16 @@ class CanvasEvents {
   public isKeyDown(key: string): boolean {
     return !!this.keys[key.toLowerCase()];
   }
+
+  public getCanvasSize() {
+    const canvas = document.getElementsByTagName("canvas") as HTMLCollectionOf<HTMLCanvasElement>;
+
+    if (canvas.length == 0) {
+      return null;
+    }
+
+    return { width: canvas[0].width, height: canvas[0].height };
+  }
 }
 
 export default new CanvasEvents();

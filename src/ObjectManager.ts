@@ -1,18 +1,31 @@
-import type { Application, Ticker } from "pixi.js";
+import type { Application } from "pixi.js";
 import MainScene from "./pixiObjects/MainScene";
+import type { Component } from "./pixiObjects/Component";
 
 class ObjectManager {
   app: Application;
-  mainScene: MainScene;
+  components: Record<string, Component> = {};
 
   constructor(app: Application) {
-    app.ticker.add((time) => this.update(time));
+    app.ticker.add((time) => this.updateAll(time.deltaTime));
     this.app = app;
-    this.mainScene = new MainScene(this.app);
+
+    const scene = new MainScene(this.app, this);
+    this.add("main-scene", scene);
   }
 
-  update(time: Ticker) {
-    this.mainScene.update(time);
+  add(name: string, component: Component): void {
+    this.components[name] = component;
+  }
+
+  get<T extends Component>(name: string): T | undefined {
+    return this.components[name] as T | undefined;
+  }
+
+  updateAll(delta: number): void {
+    for (const key in this.components) {
+      this.components[key].update(delta);
+    }
   }
 }
 
