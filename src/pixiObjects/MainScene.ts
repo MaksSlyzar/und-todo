@@ -13,13 +13,6 @@ class MainScene extends Component {
     super(objectManager);
     app.stage.addChild(this);
 
-    const text = new Text({
-      text: "Hello world",
-      x: 100,
-      y: 200,
-    });
-    this.addChild(text);
-
     const notesView = new NotesView(objectManager);
     this.addChild(notesView);
     objectManager.add("notes-view", notesView);
