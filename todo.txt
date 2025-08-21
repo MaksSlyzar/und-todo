@@ -1,5 +1,5 @@
-1. Init project with Pixi js and Typescript
-2. Handle events from user
+1. Init project with Pixi js and Typescript  DONE
+2.
 3. Create an canvas and setup camera
 4. Add button like plus and right click menu
 5. Create Note that have 
