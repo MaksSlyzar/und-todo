@@ -1,16 +1,6 @@
-1. Init project with Pixi js and Typescript  DONE
-3. Create an canvas and setup camera Done
-4. Add button like plus and right click menu Done
-5. Create Note that have 
-  Title input
-  Description input
-  Icon Gif input
-Normalize text
-Make notes bigger
-Make resize note
-Resize all canvas
-6. Drop down note
-7. Select notes
-8. Group selected notes
-9. Add note index
-10. Create dashboard for notes and name it.
+Create an positioning scene Done
+Set good background for it Done
+Make add button Done
+Create an note
+Animate note
+Drop down note

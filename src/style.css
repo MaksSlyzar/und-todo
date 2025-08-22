@@ -2,3 +2,29 @@
   margin: 0;
   padding: 0;
 }
+
+#main-scene {
+  position: absolute;
+  width: 5000px;
+  height: 5000px;
+  left: 1500px;
+  top: 1500px;
+  background: #252526;
+}
+
+#add-button {
+  display: flex;
+  position: fixed;
+  right: 100px;
+  bottom: 100px;
+  background: white;
+  width: 70px;
+  height: 70px;
+  border-radius: 25px;
+  color: black;
+  font-size: 50px;
+  text-align: center;
+  padding: auto;
+  margin: auto;
+  justify-content: center;
+}
